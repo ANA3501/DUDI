@@ -21,6 +21,7 @@ export default function Dudi() {
     return <Sim onVoltar={() => setShowSim(false)} />
   }
 
+  
   return (
     <div style={{backgroundColor: '#FFD1DC', overflow: 'hidden'}} className="min-vh-100 d-flex align-items-center justify-content-center">
       <div className="container-md" style={{position: 'relative'}}>
