@@ -11,7 +11,7 @@ export default function Avançar({ onVoltar }) {
 
   useEffect(() => {
     const calcularTempo = () => {
-      const inicio = new Date('2024-09-21T00:00:00')
+      const inicio = new Date('2024-09-23T00:00:00')
       const agora = new Date()
       const diferenca = agora - inicio
 
@@ -134,7 +134,7 @@ export default function Avançar({ onVoltar }) {
             </div>
           </div>
 
-          <p className="fs-4 text-dark mt-5">Desde 21 de Setembro de 2024</p>
+          <p className="fs-4 text-dark mt-5">Desde 23 de Setembro de 2024</p>
         </div>
       </div>
     </div>
