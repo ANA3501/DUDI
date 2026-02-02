@@ -10,6 +10,10 @@ export default function Avançar({ onVoltar }) {
     minutos: 0,
     segundos: 0
   })
+  const [screenSize, setScreenSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
 
   useEffect(() => {
     const calcularTempo = () => {
@@ -29,6 +33,18 @@ export default function Avançar({ onVoltar }) {
     const intervalo = setInterval(calcularTempo, 1000)
 
     return () => clearInterval(intervalo)
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const heartStyle = `
@@ -97,14 +113,15 @@ export default function Avançar({ onVoltar }) {
               paddingBottom: '40px',
               boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
               transform: 'rotate(8deg)',
-              width: '150px',
-              zIndex: 20
+              width: screenSize.width < 540 || screenSize.height < 701 ? 'clamp(80px, 20vw, 150px)' : '150px',
+              zIndex: 20,
+              transition: 'width 0.3s ease'
             }}
           >
-            <div style={{backgroundColor: '#e9ecef', height: '120px', marginBottom: '10px', overflow: 'hidden'}}>
+            <div style={{backgroundColor: '#e9ecef', height: screenSize.width < 540 || screenSize.height < 701 ? 'clamp(60px, 15vh, 120px)' : '120px', marginBottom: '10px', overflow: 'hidden', transition: 'height 0.3s ease'}}>
               <img src={img4} alt="Nós" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
             </div>
-            <p style={{margin: 0, fontSize: '12px', fontWeight: 'bold', textAlign: 'center'}}>&lt;3</p>
+            <p style={{margin: 0, fontSize: screenSize.width < 540 || screenSize.height < 701 ? '10px' : '12px', fontWeight: 'bold', textAlign: 'center', transition: 'font-size 0.3s ease'}}>&lt;3</p>
           </div>
           
           <h1 className="text-danger mb-4">Já me aturas há... </h1>

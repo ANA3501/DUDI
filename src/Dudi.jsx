@@ -2,6 +2,39 @@ import { useState } from 'react'
 import Sim from './Sim.jsx'
 import img5 from './assets/img5.jpeg'
 
+const styles = `
+  img[data-polaroid="true"] {
+    width: clamp(100px, 30vw, 200px) !important;
+    height: clamp(100px, 30vw, 200px) !important;
+  }
+  
+  .polaroid-card {
+    padding: clamp(0.75rem, 4vw, 2rem) !important;
+  }
+  
+  .polaroid-card h1 {
+    font-size: clamp(1rem, 5vw, 2rem) !important;
+    margin-bottom: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+  
+  .polaroid-card p.fs-3 {
+    font-size: clamp(0.75rem, 3vw, 1.5rem) !important;
+    margin-bottom: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+  
+  .polaroid-card .btn {
+    padding: clamp(0.35rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 1rem) !important;
+    font-size: clamp(0.75rem, 2vw, 1rem) !important;
+  }
+  
+  @media (max-width: 700px) {
+    .container-md {
+      width: 90% !important;
+      max-width: 90% !important;
+    }
+  }
+`
+
 export default function Dudi() {
   const [showSim, setShowSim] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -28,7 +61,9 @@ export default function Dudi() {
 
 
   return (
-    <div style={{backgroundColor: '#FFD1DC', overflow: 'hidden'}} className="min-vh-100 d-flex align-items-center justify-content-center">
+    <>
+      <style>{styles}</style>
+      <div style={{backgroundColor: '#FFD1DC', overflow: 'hidden'}} className="min-vh-100 d-flex align-items-center justify-content-center">
       {showModal && (
         <div style={{
           position: 'fixed',
@@ -63,9 +98,9 @@ export default function Dudi() {
       )}
       
       <div className="container-md" style={{position: 'relative'}}>
-        <div className="bg-white rounded-5 shadow-lg p-5">
+        <div className="bg-white rounded-5 shadow-lg p-5 polaroid-card">
           <div className="text-center mb-4">
-            <img src={img5} alt="Foto" style={{width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover'}} />
+            <img src={img5} alt="Foto" data-polaroid="true" style={{width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover'}} />
           </div>
           <h1 className="text-center mb-4 text-dark">Dudi Badudi</h1>
           <p className="text-center text-secondary mb-4 fs-3">Queres ser o meu Valentim?</p>
@@ -88,5 +123,6 @@ export default function Dudi() {
         </div>
       </div>
     </div>
+    </>
   )
 }
