@@ -165,7 +165,11 @@ export default function Avançar({ onVoltar }) {
               </video>
             </div>
             <div className="col-md-6 d-flex align-items-center ps-4">
-              <p className="fs-5 text-dark">Espero por muitos mais dias ao lado e que me faças feliz em todos eles meu amor, amo cada momento contigo fazes-me rir até ficar sem ar demasiadas vezes ahahaha, até quando me chateias eu ainda te amo. Não imaginas a sorte que tenho por estar com um rapaz tão incrível como tu e que me trata tão bem, mesmo quando estou de mau humor, tens a tua paciência e eu dou-te imenso valor coração, obriga por tudo Dudi, amo-te muito. &lt;3.</p>
+              <p className="fs-5 text-dark">Espero por muitos mais dias ao lado e que me faças feliz em 
+                todos eles meu amor, amo cada momento contigo fazes-me rir até ficar sem ar demasiadas vezes 
+                ahahaha, até quando me chateias eu ainda te amo. Não imaginas a sorte que tenho por estar com um 
+                rapaz tão incrível como tu e que me trata tão bem, mesmo quando estou de mau humor, tens a tua 
+                paciência e eu dou-te imenso valor coração, obrigada por tudo Dudi, amo-te muito. &lt;3.</p>
             </div>
           </div>
         </div>
