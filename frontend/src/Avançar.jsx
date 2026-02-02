@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import img4 from './assets/img4.jpeg'
+import vd1 from './assets/vd1.mp4'
+import backIcon from './assets/11541959.png'
 
 export default function Avançar({ onVoltar }) {
   const [tempo, setTempo] = useState({
@@ -77,11 +79,11 @@ export default function Avançar({ onVoltar }) {
       ))}
       
       <button 
-        className="btn btn-danger position-fixed top-0 start-0 m-3 rounded-circle" 
+        className="btn position-fixed top-0 start-0 m-3 rounded-circle" 
         onClick={onVoltar}
-        style={{zIndex: 1000, width: '55px', height: '55px', padding: 0, fontSize: '28px', fontWeight: 'bold'}}
+        style={{zIndex: 1000, width: '55px', height: '55px', padding: 0, border: 'none', backgroundColor: 'transparent'}}
       >
-        ←
+        <img src={backIcon} alt="Voltar" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
       </button>
       <div className="container" style={{position: 'relative', zIndex: 10}}>
         <div className="bg-white rounded-5 shadow-lg p-5 text-center" style={{position: 'relative'}}>
@@ -135,6 +137,20 @@ export default function Avançar({ onVoltar }) {
           </div>
 
           <p className="fs-4 text-dark mt-5">Desde 23 de Setembro de 2024</p>
+        </div>
+        
+        <div className="d-flex justify-content-center mt-5">
+          <div className="row w-100" style={{maxWidth: '1000px'}}>
+            <div className="col-md-6">
+              <video width="100%" controls style={{borderRadius: '15px'}}>
+                <source src={vd1} type="video/mp4" />
+                Seu navegador não suporta a tag de vídeo.
+              </video>
+            </div>
+            <div className="col-md-6 d-flex align-items-center ps-4">
+              <p className="fs-5 text-dark">Espero por muitos mais dias ao lado e que me faças feliz em todos eles meu amor, amo cada momento contigo fazes-me rir até ficar sem ar demasiadas vezes ahahaha, até quando me chateias eu ainda te amo. Não imaginas a sorte que tenho por estar com um rapaz tão incrível como tu e que me trata tão bem, mesmo quando estou de mau humor, tens a tua paciência e eu dou-te imenso valor coração, obriga por tudo Dudi, amo-te muito. &lt;3.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

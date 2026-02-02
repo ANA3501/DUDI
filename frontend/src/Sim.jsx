@@ -3,6 +3,7 @@ import img1 from './assets/img1.jpeg'
 import img2 from './assets/img2.jpeg'
 import img3 from './assets/img3.jpeg'
 import Avançar from './Avançar.jsx'
+import backIcon from './assets/11541959.png'
 
 export default function Sim({ onVoltar }) {
   const [showAvancar, setShowAvancar] = useState(false)
@@ -41,11 +42,11 @@ export default function Sim({ onVoltar }) {
     <div style={{backgroundColor: '#FFD1DC'}} className="min-vh-100 py-5">
       {onVoltar && (
         <button 
-          className="btn btn-danger position-fixed top-0 start-0 m-3 rounded-circle" 
+          className="btn position-fixed top-0 start-0 m-3 rounded-circle" 
           onClick={onVoltar}
-          style={{zIndex: 1000, width: '55px', height: '55px', padding: 0, fontSize: '28px', fontWeight: 'bold'}}
+          style={{zIndex: 1000, width: '55px', height: '55px', padding: 0, border: 'none', backgroundColor: 'transparent'}}
         >
-          ←
+          <img src={backIcon} alt="Voltar" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
         </button>
       )}
       <div className="container">
