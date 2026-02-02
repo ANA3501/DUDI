@@ -133,6 +133,8 @@ export default function Dudi() {
             <button 
               className="btn btn-secondary btn-lg" 
               onMouseEnter={moveButton}
+              onClick={moveButton}
+              onTouchStart={moveButton}
               style={{
                 position: 'relative',
                 transform: `translate(${position.x}px, ${position.y}px)`,
