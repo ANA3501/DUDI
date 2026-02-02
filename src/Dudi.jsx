@@ -83,8 +83,30 @@ export default function Dudi() {
             padding: '40px',
             textAlign: 'center',
             boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-            maxWidth: '500px'
+            maxWidth: '500px',
+            position: 'relative'
           }}>
+            <button
+              onClick={() => setShowModal(false)}
+              style={{
+                position: 'absolute',
+                top: '15px',
+                right: '15px',
+                background: 'none',
+                border: 'none',
+                fontSize: '28px',
+                cursor: 'pointer',
+                color: '#999',
+                padding: '0',
+                width: '30px',
+                height: '30px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              ×
+            </button>
             <h2 className="text-danger mb-3">Não eras capaz de recusar</h2>
             <p className="fs-5 text-dark mb-4">Fico contente e á espera de um jantar fora bebe &lt;3</p>
             <button 
