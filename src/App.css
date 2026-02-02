@@ -1,0 +1,92 @@
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+.heart-float {
+  animation: float var(--animation-duration) ease-in infinite;
+  animation-delay: var(--animation-delay);
+  pointer-events: none;
+}
+
+/* Padding para evitar sobreposição do botão de voltar */
+.min-vh-100 {
+  padding-top: 80px !important;
+}
+
+/* Estilos do Polaroid do Dudi */
+img[data-polaroid="true"] {
+  width: clamp(100px, 30vw, 200px) !important;
+  height: clamp(100px, 30vw, 200px) !important;
+}
+
+.polaroid-card {
+  padding: clamp(0.75rem, 4vw, 2rem) !important;
+}
+
+.polaroid-card h1 {
+  font-size: clamp(1rem, 5vw, 2rem) !important;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem) !important;
+}
+
+.polaroid-card p.fs-3 {
+  font-size: clamp(0.75rem, 3vw, 1.5rem) !important;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem) !important;
+}
+
+.polaroid-card .btn {
+  padding: clamp(0.35rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 1rem) !important;
+  font-size: clamp(0.75rem, 2vw, 1rem) !important;
+}
+
+/* Media queries para ecrãs pequenos */
+@media (max-width: 700px) {
+  .polaroid-foto {
+    position: absolute !important;
+    top: clamp(-15px, -5vw, -30px) !important;
+    right: clamp(-15px, -5vw, -30px) !important;
+    width: clamp(100px, 25vw, 150px) !important;
+  }
+
+  .polaroid-foto > div {
+    height: clamp(80px, 20vw, 120px) !important;
+  }
+
+  .container {
+    padding-top: clamp(1rem, 5vw, 2rem) !important;
+    padding-bottom: clamp(1rem, 5vw, 2rem) !important;
+  }
+
+  .bg-white.rounded-5 h1 {
+    font-size: clamp(1.25rem, 5vw, 2rem) !important;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem) !important;
+  }
+
+  .bg-white.rounded-5 .display-4 {
+    font-size: clamp(1.5rem, 8vw, 3.5rem) !important;
+  }
+
+  .bg-white.rounded-5 .p-4.bg-danger-subtle {
+    padding: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+
+  .bg-white.rounded-5 .fs-4 {
+    font-size: clamp(0.85rem, 3vw, 1.5rem) !important;
+  }
+
+  .bg-white.rounded-5 .p-5 {
+    padding: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+}
